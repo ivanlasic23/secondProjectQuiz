@@ -1,0 +1,91 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+
+
+}
+
+
+body {
+    background-color: blue;
+
+}
+
+/* -----------------------------------------------Nav Bar */
+nav {
+    background-color: burlywood;
+    height: 10%;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+
+}
+
+nav>ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav>ul>li {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-decoration: none;
+}
+
+nav>ul>li>a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+}
+
+@media all and (min-width: 1024px) {
+    nav>ul>li>a {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-quiz-area {
+    background-color: white;
+    height: 85%;
+}
+
+footer {
+    background-color: yellow;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+footer>a {
+    list-style-type: none;
+    color: blue;
+    margin: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}

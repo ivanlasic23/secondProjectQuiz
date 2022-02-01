@@ -1,3 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&family=Lato:wght@300&family=Oswald:wght@300&display=swap');
+
+
+
 html,
 body {
     margin: 0;
@@ -21,6 +26,7 @@ nav {
     width: 100%;
     justify-content: center;
     display: flex;
+    margin-bottom: 20px;
 
 }
 
@@ -57,21 +63,28 @@ nav>ul>li>a {
 
 
 
-
-
-
-
-
-
-
-
-
-
+/* -----------------------------------------------Main quiz area */
 
 .main-quiz-area {
-    background-color: white;
+    background-color: orange;
     height: 85%;
+    width: 80%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    
 }
+
+.welcome-quiz {
+    margin: 0;
+    font-size: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+    font-family: 'Press Start 2P', cursive;
+}
+
+/* -------------------------------------- Footer */
 
 footer {
     background-color: yellow;

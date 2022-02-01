@@ -21,7 +21,7 @@ body {
 
 /* -----------------------------------------------Nav Bar */
 nav {
-    background-color: burlywood;
+    background-color: black;
     height: 10%;
     width: 100%;
     justify-content: center;
@@ -40,16 +40,22 @@ nav>ul {
 }
 
 nav>ul>li {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: .8rem;
+    padding-right: .8rem;
     text-decoration: none;
 }
 
 nav>ul>li>a {
     text-decoration: none;
     font-size: 1rem;
-    color: white;
+    color: #006fff;
     text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    transition: .5s ease;
+}
+
+nav>ul>li>a:hover {
+    color: #ff005c
 }
 
 @media all and (min-width: 1024px) {
@@ -66,28 +72,72 @@ nav>ul>li>a {
 /* -----------------------------------------------Main quiz area */
 
 .main-quiz-area {
-    background-color: orange;
+    background-color: rgb(255, 115, 0);
     height: 85%;
     width: 80%;
     text-align: center;
     margin-right: auto;
     margin-left: auto;
     border-radius: 10px;
+    margin-bottom: 20px;
+    border: solid 3px rebeccapurple;
     
 }
 
 .welcome-quiz {
     margin: 0;
-    font-size: 2rem;
-    padding-top: 3rem;
-    padding-bottom: 1.5rem;
+    font-size: 1.7rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     font-family: 'Press Start 2P', cursive;
+}
+
+.btn {
+    text-decoration: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 1rem;
+    font-weight: 400;
+    color: black;
+    border: solid 3px black;
+    background-color: #ff005c;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 0.5s ease;
+    margin-bottom: 10px;
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+#start-game:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    background-color: black;
+    color: pink;
+    border: solid 1.5px pink;
+}
+
+.btn-help:hover {
+    transform: scale(1.03);
+    cursor: pointer;
+    background-color: black;
+    color: pink;
+    border: solid 1.5px pink;
+    margin-bottom: 30px;
+}
+
+.welcome-img > img{
+   height: 200px;
+   width: 200px;
+   margin-bottom: 40px;
 }
 
 /* -------------------------------------- Footer */
 
 footer {
-    background-color: yellow;
+    background-color: black;
     height: 10%;
     display: flex;
     justify-content: center;
@@ -97,7 +147,7 @@ footer {
 
 footer>a {
     list-style-type: none;
-    color: blue;
+    color: #006fff;
     margin: 0;
     padding-left: 0.5rem;
     padding-right: 0.5rem;

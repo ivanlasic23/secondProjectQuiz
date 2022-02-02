@@ -8,6 +8,7 @@ body {
     padding: 0;
     box-sizing: border-box;
     height: 100%;
+    font-family: 'Press Start 2P', cursive;
 
 
 }
@@ -75,7 +76,7 @@ nav>ul>li>a:hover {
 
 .main-quiz-area {
     background-color: rgb(255, 115, 0);
-    height: 85%;
+    min-height: 85%;
     width: 80%;
     text-align: center;
     margin-right: auto;
@@ -146,9 +147,11 @@ nav>ul>li>a:hover {
     .welcome-img>img {
         margin-bottom: 100px;
     }
+
     #start-game {
         margin-bottom: 30px;
     }
+
     .btn {
         width: 33%;
     }
@@ -174,9 +177,47 @@ footer>a {
 
 }
 
-footer > a:hover {
+footer>a:hover {
     color: white;
     transform: scale(1.1);
     backdrop-filter: blur(10px);
     filter: blur(.5px);
+}
+
+/* ----------------------------------------Help page */
+
+.help-quiz {
+    font-size: 1.6rem;
+    text-align: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.main-help-area {
+    background-color: rgb(255, 115, 0);
+    min-height: 85%;
+    width: 80%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: solid 3px rebeccapurple;
+}
+
+.bands {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+
+}
+
+.band img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.band>p {
+    margin: 0;
 }

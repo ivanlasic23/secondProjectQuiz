@@ -56,11 +56,11 @@ const quizQuestionsBands =[
 
 const quizQuestionsLyrics = [
     {
-        question: "Is the the real life __________?",
-        a: "Is this just magic",
-        b: "Is this just fantasy",
-        c: "Is this just mercury",
-        d: "Is this just landslide",
+        question: "Is this just __________?",
+        a: "magic",
+        b: "fantasy",
+        c: "mercury",
+        d: "landslide",
         correct: "b",
     },
 
@@ -74,11 +74,11 @@ const quizQuestionsLyrics = [
     },
 
     {
-        question: "I never meant to cause you any sorrow__________?",
-        a: "I never meant to cause you and gain",
-        b: "I never wanted to be your main",
-        c: "I never meant to cause you any pain",
-        d: "I never ever want to see you again",
+        question: "I never meant to cause you any __________?",
+        a: "gain",
+        b: "main",
+        c: "pain",
+        d: "fame",
         correct: "c",
     },
 

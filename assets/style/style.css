@@ -89,9 +89,8 @@ nav>ul>li>a:hover {
 
 .welcome-quiz {
     margin: 0;
-    font-size: 1.7rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    font-size: 1rem;
+    padding: 1rem;
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -141,6 +140,10 @@ nav>ul>li>a:hover {
     .btn {
         width: 50%
     }
+
+    .welcome-quiz {
+        font-size: 1.6rem;
+    }
 }
 
 @media all and (min-width: 1024px) {
@@ -187,7 +190,7 @@ footer>a:hover {
 /* ----------------------------------------Help page */
 
 .help-quiz {
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     text-align: center;
     width: 80%;
     margin-left: auto;
@@ -216,6 +219,9 @@ footer>a:hover {
 .band img {
     max-width: 100%;
     max-height: 100%;
+    width: auto;
+    height: auto;
+    
 }
 
 .band>p {
@@ -280,9 +286,7 @@ h2 {
         margin-bottom: 2rem;
     }
 
-    
-}
-
-@media all and (min-width: 768px) {
 
 }
+
+@media all and (min-width: 768px) {}

@@ -101,15 +101,16 @@ const quizQuestionsLyrics = [
     }
 ]
 
-const aAnswer = document.getElementsByClassName("answer-value-a");
-const bAnswer = document.getElementsByClassName("answer-value-b");
-const cAnswer = document.getElementsByClassName("answer-value-c");
-const dAnswer = document.getElementsByClassName("answer-value-d");
+let aAnswer = document.getElementById("answer-a");
+let bAnswer = document.getElementById("answer-b");
+let cAnswer = document.getElementById("answer-c");
+let dAnswer = document.getElementById("answer-d");
 
 const questions = document.getElementById("question");
 const answerValue = document.getElementsByClassName("answer-value");
+
 //const currentQuestions = 
-let currentQuestion = 0;
+let currentQuestion = 4;
 //score start value
 let currentScore = 0;
 
@@ -118,7 +119,12 @@ startBandQuiz ()
 
 function startBandQuiz() {
     let quizData = quizQuestionsBands[currentQuestion]
-    questions.innerText = quizData.question
+    questions.innerText = quizData.question;
+    aAnswer.innerText = quizData.a;
+    bAnswer.innerText = quizData.b;
+    cAnswer.innerText = quizData.c;
+    dAnswer.innerText = quizData.d;
+    console.log(quizData.a)
 }
 
 
@@ -126,21 +132,14 @@ function startBandQuiz() {
 
 
 
-
-
-
-
-
-// Start game and load question on page load when type of game selected on homepage
-/*document.addEventListener("DOMContentLoaded", function () {
-    let answerDiv = document.getElementsByClassName("answer-div");
+let answer = document.getElementsByClassName("answer-div");
 
     for (let i = 0; i < answerDiv.length; i++) {
-        answerDiv[i].addEventListener("click", function () {
+        answer[i].addEventListener("click", function () {
             console.log("Clicked");
             alert("Clicked")
         });
     }
-})*/
+
 
 

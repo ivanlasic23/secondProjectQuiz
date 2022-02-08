@@ -221,3 +221,20 @@ footer>a:hover {
 .band>p {
     margin: 0;
 }
+
+
+/* ------------------------------------------Quiz page */
+
+.main-questions-area {
+    background-color: rgb(255, 115, 0);
+    min-height: 85%;
+    width: 80%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: solid 3px rebeccapurple;
+
+}
+

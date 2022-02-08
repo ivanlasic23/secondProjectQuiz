@@ -238,3 +238,49 @@ footer>a:hover {
 
 }
 
+h2 {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.answer-div {
+    background-color: #13e4ef;
+    margin: .4rem;
+    border-radius: 5px;
+    text-align: start;
+    border: 2px solid #ff005c;
+}
+
+.score-score {
+    margin-bottom: 0;
+}
+
+.score-count {
+    margin-top: 0;
+}
+
+@media all and (min-width: 768px) {
+    .answer-div {
+        margin: 0.6rem;
+        margin-left: auto;
+        margin-right: auto;
+        height: 2rem;
+        width: 75%;
+    }
+
+    #question {
+        width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .score-div {
+        margin-bottom: 2rem;
+    }
+
+    footer>a {
+        font-size: 2.6rem;
+    }
+}

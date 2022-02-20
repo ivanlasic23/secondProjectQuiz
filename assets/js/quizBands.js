@@ -1,6 +1,5 @@
-const quizQuestionsBands =[
-    {
-        question : "Who was the lead singer for Queen?",
+const quizQuestionsBands = [{
+        question: "Who was the lead singer for Queen?",
         a: "Robert Plant",
         b: "Freddie Mercury",
         c: "George Michael",
@@ -54,8 +53,7 @@ const quizQuestionsBands =[
     }
 ]
 
-const quizQuestionsLyrics = [
-    {
+const quizQuestionsLyrics = [{
         question: "Is this just __________?",
         a: "magic",
         b: "fantasy",
@@ -106,26 +104,62 @@ let bAnswer = document.getElementById("answer-b");
 let cAnswer = document.getElementById("answer-c");
 let dAnswer = document.getElementById("answer-d");
 
-const quiz = document.getElementById("quiz")
+
+const quiz = document.getElementById("quiz");
 const questions = document.getElementById("question");
 const answerValue = document.getElementsByClassName("answer-value");
-//const maxQ= 5;
+const maxQ = 5;
+let nextQuestion = [];
 
-function showQuestionBand(){
-let quizData = quizQuestionsBands[currentQuestion]
-    questions.innerText = quizData.question;
-    aAnswer.innerText = quizData.a;
-    bAnswer.innerText = quizData.b;
-    cAnswer.innerText = quizData.c;
-    dAnswer.innerText = quizData.d;}
+
+//Score & q number
+let currentQuestion = document.getElementById("question-number");
+currentQuestion.innerText=1;
+let currentScore = 0;
+
 //Band quiz start
 
+
 function startBandQuiz() {
-    let currentQuestion = 1;
-    let currentScore = 0;
+    currentQuestion = 1;
+    currentScore = 0;
+    nextQuestion = quizQuestionsBands;
     showQuestionBand()
-    
+
 }
+
+// Display questions
+function showQuestionBand(){
+    let quizData = quizQuestionsBands[currentQuestion]
+        questions.innerText = quizData.question;
+        aAnswer.innerText = quizData.a;
+        bAnswer.innerText = quizData.b;
+        cAnswer.innerText = quizData.c;
+        dAnswer.innerText = quizData.d;
+    
+    if (currentQuestion>maxQ){
+        //end game
+    }
+
+    currentQuestion++;
+    currentQuestion.innerText=`${currentQuestion}/${maxQ}`;
+
+    
+    }
+    
+
+
+
+
+
+
+
+
+
+startBandQuiz()
+
+
+
 
 //Lyrics quiz function
 /*function startLyricsQuiz() {
@@ -174,13 +208,11 @@ function showQuestionLyrics() {
 
 let answer = document.getElementsByClassName("answer-div");
 
-    for (let i = 0; i < answer.length; i++) {
-        answer[i].addEventListener("click", function () {
-            console.log("Clicked");
-            alert("Clicked")
-        });
-    }
+for (let i = 0; i < answer.length; i++) {
+    answer[i].addEventListener("click", function () {
+        console.log("Clicked");
+        alert("Clicked")
+    });
+}
 
 console.log(answer)
-
-

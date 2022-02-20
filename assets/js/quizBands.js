@@ -100,32 +100,72 @@ const quizQuestionsLyrics = [
         correct: "c",
     }
 ]
-
+//******************************************************************************************************* */
 let aAnswer = document.getElementById("answer-a");
 let bAnswer = document.getElementById("answer-b");
 let cAnswer = document.getElementById("answer-c");
 let dAnswer = document.getElementById("answer-d");
 
+const quiz = document.getElementById("quiz")
 const questions = document.getElementById("question");
 const answerValue = document.getElementsByClassName("answer-value");
+//const maxQ= 5;
 
-//const currentQuestions = 
-let currentQuestion = 4;
-//score start value
-let currentScore = 0;
-
-
-startBandQuiz ()
-
-function startBandQuiz() {
-    let quizData = quizQuestionsBands[currentQuestion]
+function showQuestionBand(){
+let quizData = quizQuestionsBands[currentQuestion]
     questions.innerText = quizData.question;
     aAnswer.innerText = quizData.a;
     bAnswer.innerText = quizData.b;
     cAnswer.innerText = quizData.c;
-    dAnswer.innerText = quizData.d;
-    console.log(quizData.a)
+    dAnswer.innerText = quizData.d;}
+//Band quiz start
+
+function startBandQuiz() {
+    let currentQuestion = 1;
+    let currentScore = 0;
+    showQuestionBand()
+    
 }
+
+//Lyrics quiz function
+/*function startLyricsQuiz() {
+    let currentQuestion = 1;
+    let currentScore = 0;
+    showQuestionLyrics()
+}
+
+function showQuestionLyrics() {
+    let quizDatab = quizQuestionsLyrics[currentQuestionb]
+    questions.innerText = quizDatab.question;
+    aAnswer.innerText = quizDatab.a;
+    bAnswer.innerText = quizDatab.b;
+    cAnswer.innerText = quizDatab.c;
+    dAnswer.innerText = quizDatab.d;   
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -134,12 +174,13 @@ function startBandQuiz() {
 
 let answer = document.getElementsByClassName("answer-div");
 
-    for (let i = 0; i < answerDiv.length; i++) {
+    for (let i = 0; i < answer.length; i++) {
         answer[i].addEventListener("click", function () {
             console.log("Clicked");
             alert("Clicked")
         });
     }
 
+console.log(answer)
 
 

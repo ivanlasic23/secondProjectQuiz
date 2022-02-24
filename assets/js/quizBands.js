@@ -1,127 +1,131 @@
 const quizQuestionsBands = [{
         question: "Who was the lead singer for Queen?",
-        a: "Robert Plant",
-        b: "Freddie Mercury",
-        c: "George Michael",
-        d: "Seal",
+        choice1: "Robert Plant",
+        choice2: "Freddie Mercury",
+        choice3: "George Michael",
+        choice4: "Seal",
         correct: "b",
     },
 
     {
         question: "Where does the popular band A-ha come from?",
-        a: "Sweden",
-        b: "Denmark",
-        c: "Norway",
-        d: "England",
+        choice1: "Sweden",
+        choice2: "Denmark",
+        choice3: "Norway",
+        choice4: "England",
         correct: "c",
     },
 
     {
         question: "What was Prince' best selling album of all time?",
-        a: "Purple Rain",
-        b: "1999",
-        C: "Around the World in a Day",
-        d: "Emancipation",
+        choice1: "Purple Rain",
+        choice2: "1999",
+        choice3: "Around the World in a Day",
+        choice4: "Emancipation",
         correct: "a",
     },
 
     {
         question: "How many records have Boni Jovi sell worldwide?",
-        a: "40 million",
-        b: "50 million",
-        c: "74 million",
-        d: "130 million",
+        choice1: "40 million",
+        choice2: "50 million",
+        choice3: "74 million",
+        choice4: "130 million",
         correct: "d",
     },
 
     {
         question: "What are the names of Van Halen brothers?",
-        a: "Johnnie & Freddie",
-        b: "Alex & Eddie",
-        c: "Ben & Jerry",
-        d: "Jordan & Larry",
+        choice1: "Johnnie & Freddie",
+        choice2: "Alex & Eddie",
+        choice3: "Ben & Jerry",
+        choice4: "Jordan & Larry",
         correct: "b",
     },
 
     {
         question: "Where was band U2 formed?",
-        a: "London",
-        b: "Dublin",
-        c: "Cork",
-        d: "Liverpool",
+        choice1: "London",
+        choice2: "Dublin",
+        choice3: "Cork",
+        choice4: "Liverpool",
         correct: "b",
     }
 ]
 
 const quizQuestionsLyrics = [{
         question: "Is this just __________?",
-        a: "magic",
-        b: "fantasy",
-        c: "mercury",
-        d: "landslide",
+        choice1: "magic",
+        choice2: "fantasy",
+        choice3: "mercury",
+        choice4: "landslide",
         correct: "b",
     },
 
     {
         question: "Ah, can't you see what I mean__________?",
-        a: "Ah, might as well jump",
-        b: "Might as well lump",
-        c: "Might as well stop",
-        d: "None of the above",
+        choice1: "Ah, might as well jump",
+        choice2: "Might as well lump",
+        choice3: "Might as well stop",
+        choice4: "None of the above",
         correct: "a",
     },
 
     {
         question: "I never meant to cause you any __________?",
-        a: "gain",
-        b: "main",
-        c: "pain",
-        d: "fame",
+        choice1: "gain",
+        choice2: "main",
+        choice3: "pain",
+        choice4: "fame",
         correct: "c",
     },
 
     {
         question: "With or withour you_____________?",
-        a: "I can't live",
-        b: "I can't breathe",
-        c: "I can't be",
-        d: "I can't even",
+        choice1: "I can't live",
+        choice2: "I can't breathe",
+        choice3: "I can't be",
+        choice4: "I can't even",
         correct: "a",
     },
 
     {
         question: "We've got each other and that's a lot for love We'll give it a ____?",
-        a: "jump",
-        b: "life",
-        c: "shot",
-        d: "magic",
+        choice1: "jump",
+        choice2: "life",
+        choice3: "shot",
+        choice4: "magic",
         correct: "c",
     }
 ]
 //******************************************************************************************************* */
-let aAnswer = document.getElementById("answer-a");
+/*let aAnswer = document.getElementById("answer-a");
 let bAnswer = document.getElementById("answer-b");
 let cAnswer = document.getElementById("answer-c");
-let dAnswer = document.getElementById("answer-d");
+let dAnswer = document.getElementById("answer-d");*/
 
 
 const quiz = document.getElementById("quiz");
 const questions = document.getElementById("question");
-const answerValue = document.getElementsByClassName("answer-value");
-const maxQ = 5;
+const choices = Array.from(document.getElementsByClassName("answer-value"));
+//const answerValue = document.getElementsByClassName("answer-value");
+const maxQ = 6;
 let nextQuestion = [];
+let currentQuestions={};
+let acceptingAnswers = false;
 
 
 //Score & q number
 let currentQuestion = document.getElementById("question-number");
-currentQuestion.innerText=1;
-let currentScore = 0;
+let currentQ=0;
+let currentScore = document.getElementById("score");
+currentScore.innerText=0;
 
 //Band quiz start
 
 
 function startBandQuiz() {
-    currentQuestion = 1;
+    currentQuestion.innerText = 1;
     currentScore = 0;
     nextQuestion = quizQuestionsBands;
     showQuestionBand()
@@ -130,22 +134,43 @@ function startBandQuiz() {
 
 // Display questions
 function showQuestionBand(){
-    let quizData = quizQuestionsBands[currentQuestion]
+    /*let quizData = quizQuestionsBands[currentQuestion]
         questions.innerText = quizData.question;
         aAnswer.innerText = quizData.a;
         bAnswer.innerText = quizData.b;
         cAnswer.innerText = quizData.c;
-        dAnswer.innerText = quizData.d;
+        dAnswer.innerText = quizData.d;*/
     
-    if (currentQuestion>maxQ){
-        //end game
-    }
+    if (nextQuestion.length>maxQ){
+        //end game use innerhtml for a div of html and write it in backtics game over you scored x
+        
+       /* quiz.innerHTML=
+    `<h1>Congratulations you have scored ${currentScore} </h1>`*/}
 
-    currentQuestion++;
-    currentQuestion.innerText=`${currentQuestion}/${maxQ}`;
+    currentQ++;
+    currentQuestion.innerText=`${currentQ}/${maxQ}`;
+
+    const questionIndex = Math.floor(Math.random()*nextQuestion.length);
+    currentQuestions = nextQuestion[questionIndex];
+    questions.innerText=currentQuestions.question;
+
+    choices.forEach(choice => {
+        const number = choice.dataset['number'];
+        choice.innerText = currentQuestions['choice' + number];
+    })
+
+    nextQuestion.splice(questionIndex, 1);
+
+    acceptingAnswers=true;
+    console.log(currentQuestions.question)
+    
+}
+    
+
+
+    console.log(quizQuestionsBands)
 
     
-    }
     
 
 
@@ -215,4 +240,3 @@ for (let i = 0; i < answer.length; i++) {
     });
 }
 
-console.log(answer)

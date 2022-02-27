@@ -221,7 +221,7 @@ footer>a:hover {
     max-height: 100%;
     width: auto;
     height: auto;
-    
+
 }
 
 .band>p {
@@ -250,8 +250,10 @@ h2 {
     margin-bottom: 1rem;
 }
 
-.answer-value {
-    width: 100%;
+.correct-incorrect{
+    background-color: azure;
+    width: 100px;
+    height: 100px;
 }
 
 .answer-div {

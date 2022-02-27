@@ -105,8 +105,6 @@ let cAnswer = document.getElementById("answer-c");
 let dAnswer = document.getElementById("answer-d");*/
 
 let answer = document.getElementsByClassName("answer-div");
-
-
 const quiz = document.getElementById("quiz");
 const questions = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("answer-value"));
@@ -114,6 +112,7 @@ const choices = Array.from(document.getElementsByClassName("answer-value"));
 const maxQ = 6;
 let nextQuestion = [];
 let currentQuestions = {};
+//Use for argument later in the code
 let acceptingAnswers = false;
 
 
@@ -127,10 +126,10 @@ currentScore.innerText = 0;
 
 
 function startBandQuiz() {
-    currentQuestion.innerText = 1;
-
+    currentQuestion.innerText = 2;
     nextQuestion = quizQuestionsBands;
-    showQuestionBand()
+    showQuestionBand();
+    currentScore.innerText=0;
 
 }
 
@@ -196,16 +195,16 @@ choices.forEach(choice => {
 
         if (classToApply === "correct") {
             incrementScore(currentScore);
-            alert("correct")
+            this.innerText="Correct"
         } else if (classToApply === "incorrect") {
-            alert("incorrect")
+            this.innerText="Incorrect"
         }
 
         selectedChoice.parentElement.classList.add(classToApply);
 
         function incrementScore(num) {
-            currentScore.innerText += num;
-            currentScore.innerText = currentScore;
+            currentScore.innerHTML = `10`;
+            
         }
     })
 

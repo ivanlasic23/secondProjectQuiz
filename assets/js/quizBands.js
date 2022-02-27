@@ -118,7 +118,7 @@ let acceptingAnswers = false;
 
 //Score & q number
 let currentQuestion = document.getElementById("question-number");
-let currentQ = 0;
+let currentQ = 1;
 let currentScore = document.getElementById("score");
 currentScore.innerText = 0;
 
@@ -126,10 +126,10 @@ currentScore.innerText = 0;
 
 
 function startBandQuiz() {
-    currentQuestion.innerText = 2;
+    currentQuestion.innerText = 1;
     nextQuestion = quizQuestionsBands;
     showQuestionBand();
-    currentScore.innerText=0;
+    currentScore.innerText = 0;
 
 }
 
@@ -186,36 +186,24 @@ choices.forEach(choice => {
         let classToApply;
 
         if (selectedAnswer == currentQuestions.correct) {
-            classToApply = "correct"
-        } else {
-            classToApply = "incorrect"
-        }
-
-
-
-        if (classToApply === "correct") {
+            classToApply = "correct";
             incrementScore(currentScore);
-            this.innerText="Correct"
-        } else if (classToApply === "incorrect") {
-            this.innerText="Incorrect"
+            this.innerText = "Correct";
+        } else {
+            classToApply = "incorrect";
+            this.innerText = "Incorrect"
         }
-
         selectedChoice.parentElement.classList.add(classToApply);
-
+        showQuestionBand()
+        
+        // increment score
         function incrementScore(num) {
             currentScore.innerHTML = `10`;
-            
+
         }
     })
 
 })
-
-
-
-
-
-
-// increment score
 
 
 

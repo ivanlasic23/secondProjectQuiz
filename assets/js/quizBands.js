@@ -4,7 +4,7 @@ const quizQuestionsBands = [{
         choice2: "Freddie Mercury",
         choice3: "George Michael",
         choice4: "Seal",
-        correct: "b",
+        correct: 2,
     },
 
     {
@@ -13,7 +13,7 @@ const quizQuestionsBands = [{
         choice2: "Denmark",
         choice3: "Norway",
         choice4: "England",
-        correct: "c",
+        correct: 3,
     },
 
     {
@@ -22,7 +22,7 @@ const quizQuestionsBands = [{
         choice2: "1999",
         choice3: "Around the World in a Day",
         choice4: "Emancipation",
-        correct: "a",
+        correct: 1,
     },
 
     {
@@ -31,7 +31,7 @@ const quizQuestionsBands = [{
         choice2: "50 million",
         choice3: "74 million",
         choice4: "130 million",
-        correct: "d",
+        correct: 4,
     },
 
     {
@@ -40,7 +40,7 @@ const quizQuestionsBands = [{
         choice2: "Alex & Eddie",
         choice3: "Ben & Jerry",
         choice4: "Jordan & Larry",
-        correct: "b",
+        correct: 2,
     },
 
     {
@@ -49,7 +49,7 @@ const quizQuestionsBands = [{
         choice2: "Dublin",
         choice3: "Cork",
         choice4: "Liverpool",
-        correct: "b",
+        correct: 2,
     }
 ]
 
@@ -59,7 +59,7 @@ const quizQuestionsLyrics = [{
         choice2: "fantasy",
         choice3: "mercury",
         choice4: "landslide",
-        correct: "b",
+        correct: 2,
     },
 
     {
@@ -68,7 +68,7 @@ const quizQuestionsLyrics = [{
         choice2: "Might as well lump",
         choice3: "Might as well stop",
         choice4: "None of the above",
-        correct: "a",
+        correct: 1,
     },
 
     {
@@ -77,7 +77,7 @@ const quizQuestionsLyrics = [{
         choice2: "main",
         choice3: "pain",
         choice4: "fame",
-        correct: "c",
+        correct: 3,
     },
 
     {
@@ -86,7 +86,7 @@ const quizQuestionsLyrics = [{
         choice2: "I can't breathe",
         choice3: "I can't be",
         choice4: "I can't even",
-        correct: "a",
+        correct: 1,
     },
 
     {
@@ -95,7 +95,7 @@ const quizQuestionsLyrics = [{
         choice2: "life",
         choice3: "shot",
         choice4: "magic",
-        correct: "c",
+        correct: 3,
     }
 ]
 //******************************************************************************************************* */
@@ -104,6 +104,8 @@ let bAnswer = document.getElementById("answer-b");
 let cAnswer = document.getElementById("answer-c");
 let dAnswer = document.getElementById("answer-d");*/
 
+let answer = document.getElementsByClassName("answer-div");
+
 
 const quiz = document.getElementById("quiz");
 const questions = document.getElementById("question");
@@ -111,73 +113,110 @@ const choices = Array.from(document.getElementsByClassName("answer-value"));
 //const answerValue = document.getElementsByClassName("answer-value");
 const maxQ = 6;
 let nextQuestion = [];
-let currentQuestions={};
+let currentQuestions = {};
 let acceptingAnswers = false;
 
 
 //Score & q number
 let currentQuestion = document.getElementById("question-number");
-let currentQ=0;
+let currentQ = 0;
 let currentScore = document.getElementById("score");
-currentScore.innerText=0;
+currentScore.innerText = 0;
 
 //Band quiz start
 
 
 function startBandQuiz() {
     currentQuestion.innerText = 1;
-    currentScore = 0;
+
     nextQuestion = quizQuestionsBands;
     showQuestionBand()
 
 }
 
 // Display questions
-function showQuestionBand(){
+function showQuestionBand() {
     /*let quizData = quizQuestionsBands[currentQuestion]
         questions.innerText = quizData.question;
         aAnswer.innerText = quizData.a;
         bAnswer.innerText = quizData.b;
         cAnswer.innerText = quizData.c;
         dAnswer.innerText = quizData.d;*/
-    
-    if (nextQuestion.length>maxQ){
+
+    if (nextQuestion.length > maxQ) {
         //end game use innerhtml for a div of html and write it in backtics game over you scored x
-        
-       /* quiz.innerHTML=
-    `<h1>Congratulations you have scored ${currentScore} </h1>`*/}
+
+        /* quiz.innerHTML=
+    `<h1>Congratulations you have scored ${currentScore} </h1>`*/
+    }
 
     currentQ++;
-    currentQuestion.innerText=`${currentQ}/${maxQ}`;
+    currentQuestion.innerText = `${currentQ}/${maxQ}`;
 
-    const questionIndex = Math.floor(Math.random()*nextQuestion.length);
+    const questionIndex = Math.floor(Math.random() * nextQuestion.length);
     currentQuestions = nextQuestion[questionIndex];
-    questions.innerText=currentQuestions.question;
+    questions.innerText = currentQuestions.question;
 
     choices.forEach(choice => {
         const number = choice.dataset['number'];
         choice.innerText = currentQuestions['choice' + number];
     })
 
+    //Make sure we dont repeat the same question
     nextQuestion.splice(questionIndex, 1);
 
-    acceptingAnswers=true;
+    acceptingAnswers = true;
     console.log(currentQuestions.question)
-    
+
 }
-    
-
-
-    console.log(quizQuestionsBands)
-
-    
-    
 
 
 
+console.log(quizQuestionsBands)
+
+// add event listener to answers
+
+choices.forEach(choice => {
+    choice.addEventListener("click", function (e) {
+        if (!acceptingAnswers) return;
+
+        acceptingAnswers = true;
+        const selectedChoice = e.target;
+        const selectedAnswer = selectedChoice.dataset["number"];
+
+        let classToApply;
+
+        if (selectedAnswer == currentQuestions.correct) {
+            classToApply = "correct"
+        } else {
+            classToApply = "incorrect"
+        }
 
 
 
+        if (classToApply === "correct") {
+            incrementScore(currentScore);
+            alert("correct")
+        } else if (classToApply === "incorrect") {
+            alert("incorrect")
+        }
+
+        selectedChoice.parentElement.classList.add(classToApply);
+
+        function incrementScore(num) {
+            currentScore.innerText += num;
+            currentScore.innerText = currentScore;
+        }
+    })
+
+})
+
+
+
+
+
+
+// increment score
 
 
 
@@ -231,12 +270,11 @@ function showQuestionLyrics() {
 
 
 
-let answer = document.getElementsByClassName("answer-div");
 
+/*
 for (let i = 0; i < answer.length; i++) {
     answer[i].addEventListener("click", function () {
         console.log("Clicked");
         alert("Clicked")
     });
-}
-
+}*/

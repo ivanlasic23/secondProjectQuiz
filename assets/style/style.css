@@ -250,6 +250,10 @@ h2 {
     margin-bottom: 1rem;
 }
 
+.answer-value {
+    width: 100%;
+}
+
 .answer-div {
     background-color: #13e4ef;
     margin: .4rem;

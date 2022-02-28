@@ -118,9 +118,10 @@ let acceptingAnswers = false;
 
 //Score & q number
 let currentQuestion = document.getElementById("question-number");
-let currentQ = 1;
+let currentQ = 0;
 let currentScore = document.getElementById("score");
 currentScore.innerText = 0;
+let score= 0;
 
 //Band quiz start
 
@@ -129,24 +130,17 @@ function startBandQuiz() {
     currentQuestion.innerText = 1;
     nextQuestion = quizQuestionsBands;
     showQuestionBand();
-    currentScore.innerText = 0;
+    
 
 }
 
 // Display questions
 function showQuestionBand() {
-    /*let quizData = quizQuestionsBands[currentQuestion]
-        questions.innerText = quizData.question;
-        aAnswer.innerText = quizData.a;
-        bAnswer.innerText = quizData.b;
-        cAnswer.innerText = quizData.c;
-        dAnswer.innerText = quizData.d;*/
-
-    if (nextQuestion.length > maxQ) {
+    
+    if (nextQuestion.length===0 ) {
         //end game use innerhtml for a div of html and write it in backtics game over you scored x
 
-        /* quiz.innerHTML=
-    `<h1>Congratulations you have scored ${currentScore} </h1>`*/
+        quiz.innerHTML =`<h1>Congratulations you have scored ${score} out of ${maxQ} </h1>`
     }
 
     currentQ++;
@@ -195,10 +189,12 @@ choices.forEach(choice => {
         }
         selectedChoice.parentElement.classList.add(classToApply);
         showQuestionBand()
-        
+
         // increment score
         function incrementScore(num) {
-            currentScore.innerHTML = `10`;
+            num=1;
+            score +=num;
+            currentScore.innerText= score;
 
         }
     })

@@ -301,10 +301,3 @@ h2 {
 
 @media all and (min-width: 768px) {}
 
-.correct {
-    background-color: green;
-}
-
-.incorrect {
-    background-color: red;
-}

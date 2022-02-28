@@ -188,7 +188,10 @@ choices.forEach(choice => {
             this.innerText = "Incorrect"
         }
         selectedChoice.parentElement.classList.add(classToApply);
-        showQuestionBand()
+       setTimeout(()=>{
+           showQuestionBand()
+       },1500)
+        
 
         // increment score
         function incrementScore(num) {

@@ -187,7 +187,7 @@ choices.forEach(choice => {
 
         if (selectedAnswer == currentQuestions.correct) {
             classToApply = "correct";
-            incrementScore(currentScore);
+            incrementScore();
             this.innerText = "Correct";
         } else {
             classToApply = "incorrect";

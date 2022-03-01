@@ -26,7 +26,7 @@ const quizQuestionsBands = [{
 },
 
 {
-    question: "How many records have Boni Jovi sell worldwide?",
+    question: "How many records have Boni Jovi sold worldwide?",
     choice1: "40 million",
     choice2: "50 million",
     choice3: "74 million",
@@ -50,11 +50,10 @@ const quizQuestionsBands = [{
     choice3: "Cork",
     choice4: "Liverpool",
     correct: 2,
-}
-]
+},
 
-const quizQuestionsLyrics = [{
-    question: "Is this just __________?",
+{
+    question: "Is this just ___?",
     choice1: "magic",
     choice2: "fantasy",
     choice3: "mercury",
@@ -63,7 +62,7 @@ const quizQuestionsLyrics = [{
 },
 
 {
-    question: "Ah, can't you see what I mean__________?",
+    question: "Ah, can't you see what I mean___?",
     choice1: "Ah, might as well jump",
     choice2: "Might as well lump",
     choice3: "Might as well stop",
@@ -72,7 +71,7 @@ const quizQuestionsLyrics = [{
 },
 
 {
-    question: "I never meant to cause you any __________?",
+    question: "I never meant to cause you any ___?",
     choice1: "gain",
     choice2: "main",
     choice3: "pain",
@@ -81,7 +80,7 @@ const quizQuestionsLyrics = [{
 },
 
 {
-    question: "With or withour you_____________?",
+    question: "With or withour you____?",
     choice1: "I can't live",
     choice2: "I can't breathe",
     choice3: "I can't be",
@@ -96,6 +95,14 @@ const quizQuestionsLyrics = [{
     choice3: "shot",
     choice4: "magic",
     correct: 3,
+},
+{
+    question: "Take on me,____",
+    choice1: "Take me on",
+    choice2: "Take me out",
+    choice3: "Take me there",
+    choice4: "Take me take me",
+    correct: 1,
 }
 ]
 
@@ -104,8 +111,7 @@ let answer = document.getElementsByClassName("answer-div");
 const quiz = document.getElementById("quiz");
 const questions = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("answer-value"));
-//const answerValue = document.getElementsByClassName("answer-value");
-const maxQ = 6;
+const maxQ = quizQuestionsBands.length;
 let nextQuestion = [];
 let currentQuestions = {};
 //Use for argument later in the code
@@ -126,8 +132,6 @@ function startBandQuiz() {
     currentQuestion.innerText = 1;
     nextQuestion = quizQuestionsBands;
     showQuestionBand();
-
-
 }
 
 // Display questions
@@ -153,8 +157,6 @@ function showQuestionBand() {
     nextQuestion.splice(questionIndex, 1);
 
     acceptingAnswers = true;
-    console.log(currentQuestions.question)
-
 }
 
 
@@ -192,22 +194,19 @@ choices.forEach(choice => {
             currentScore.innerText = score;
 
         }
-
-
     })
-
 })
 
 // Which message will be shown upon quiz completion
 function whichMessageToShow(){
     if(score==maxQ){
         quiz.innerHTML=`<h1>Great Job! You are a true 80's fan</h1>
-        <h2 class="play-again"><a href="index.html">Play Again</a></h2>>`
+        <a href="index.html" class="btn">Play Again</a>`
     }
     else if (score<maxQ){
-        quiz.innerHTML=`<h1>You have scored ${score} out of ${maxQ}. You should study more here</h1
-        <h2 class="play-again"><a href="study.html">Study</a></h2>
-        <h2 class="play-again"><a href="index.html">Play Again</a></h2>`
+        quiz.innerHTML=`<h1>You have scored ${score} out of ${maxQ}. We think you should study more</h1>
+        <a href="study.html" class="btn">Study</a>
+        <a href="index.html" class="btn">Play Again</a>`
     }    
 }
 

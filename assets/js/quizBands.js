@@ -138,10 +138,7 @@ function startBandQuiz() {
 function showQuestionBand() {
 
     if (nextQuestion.length === 0) {
-        //end game use innerhtml for a div of html and write it in backtics game over you scored x
-
-        quiz.innerHTML = `<h1>Congratulations you have scored ${score} out of ${maxQ} </h1>
-        <h2 class="play-again"><a href="index.html">Play Again</a></h2>`
+        whichMessageToShow()      
     }
 
     currentQ++;
@@ -164,9 +161,6 @@ function showQuestionBand() {
 
 }
 
-
-
-console.log(quizQuestionsBands)
 
 // add event listener to answers
 
@@ -208,7 +202,18 @@ choices.forEach(choice => {
 
 })
 
-
+// Which message will be shown upon quiz completion
+function whichMessageToShow(){
+    if(score==maxQ){
+        quiz.innerHTML=`<h1>Great Job! You are a true 80's fan</h1>
+        <h2 class="play-again"><a href="index.html">Play Again</a></h2>>`
+    }
+    else if (score<maxQ){
+        quiz.innerHTML=`<h1>You have scored ${score} out of ${maxQ}. You should study more here</h1
+        <h2 class="play-again"><a href="study.html">Study</a></h2>
+        <h2 class="play-again"><a href="index.html">Play Again</a></h2>`
+    }    
+}
 
 startBandQuiz()
 

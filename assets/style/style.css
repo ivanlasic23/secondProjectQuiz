@@ -250,7 +250,7 @@ h2 {
     margin-bottom: 1rem;
 }
 
-.correct-incorrect{
+.correct-incorrect {
     background-color: azure;
     width: 100px;
     height: 100px;
@@ -300,4 +300,6 @@ h2 {
 }
 
 @media all and (min-width: 768px) {}
+
+/**********************************************************Congrats page******************************/
 

@@ -140,7 +140,8 @@ function showQuestionBand() {
     if (nextQuestion.length === 0) {
         //end game use innerhtml for a div of html and write it in backtics game over you scored x
 
-        quiz.innerHTML = `<h1>Congratulations you have scored ${score} out of ${maxQ} </h1>`
+        quiz.innerHTML = `<h1>Congratulations you have scored ${score} out of ${maxQ} </h1>
+        <h2 class="play-again"><a href="index.html">Play Again</a></h2>`
     }
 
     currentQ++;
@@ -185,13 +186,13 @@ choices.forEach(choice => {
             this.innerText = "Correct";
         } else {
             classToApply = "incorrect";
-            this.innerText = "Incorrect"
+            this.innerText = "Incorrect";
         }
         selectedChoice.parentElement.classList.add(classToApply);
         //Give it time to show the correct answer and transition
         setTimeout(() => {
             showQuestionBand()
-            selectedAnswer.classList.remove("correct")
+
         }, 1500);
 
         // increment score

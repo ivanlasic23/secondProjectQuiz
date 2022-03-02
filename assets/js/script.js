@@ -5,16 +5,17 @@ function crazyColor() {
     var randomColor = () => `rgb(${randomInt(0, 255)},${randomInt(0, 255)},${randomInt(0, 255)})`;
 
     function namess() {
-        this.style.backgroundColor = randomColor();}
+        this.style.backgroundColor = randomColor();
+    }
 
     document.getElementsByClassName("main-quiz-area")[0].addEventListener("mouseover", namess)
-    
+
 }
 crazyColor();
 
 function turnOffCrazyColor() {
     document.getElemenstByClassName("main-quiz-area")[0].classList.remove("main-quiz-area");
-    
+
 }
 
 let turnOffBtn = document.getElementById("turn-off");

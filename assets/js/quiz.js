@@ -198,10 +198,10 @@ choices.forEach(choice => {
 // Which message will be shown upon quiz completion
 function whichMessageToShow() {
     if (score == maxQ) {
-        quiz.innerHTML = `<h1 class="you-scored">Great Job! You are a true 80's fan</h1>
+        quiz.innerHTML = `<h2 class="you-scored">Great Job! You are a true 80's fan</h2>
         <a href="index.html" class="btn btn-finish">Play Again</a>`;
     } else if (score < maxQ) {
-        quiz.innerHTML = `<h1 class="you-scored">You have scored ${score} out of ${maxQ}. We think you should study more</h1>
+        quiz.innerHTML = `<h2 class="you-scored">You have scored ${score} out of ${maxQ}. We think you should study more</h2>
         <a href="study.html" class="btn btn-finish">Study</a>
         <a href="index.html" class="btn btn-finish">Play Again</a>`;
     }

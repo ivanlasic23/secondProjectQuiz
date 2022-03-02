@@ -10,6 +10,7 @@ body {
     height: 100%;
     font-family: 'orbitron';
 }
+
 body {
     background-color: blue;
 }
@@ -259,11 +260,13 @@ footer>a:hover {
 .score-score {
     margin-bottom: 0;
 }
+
 .answer-value {
     display: inline-block;
     width: 90%;
     text-align: center;
 }
+
 .score-div {
     background-color: black;
     width: 30%;
@@ -272,6 +275,7 @@ footer>a:hover {
     color: rgb(255, 115, 0);
     border-radius: 5px;
 }
+
 .score-count {
     margin-top: 0;
 }
@@ -304,8 +308,8 @@ footer>a:hover {
 
 }
 
-@media all and (min-width: 1024px){
-    .score-div{
+@media all and (min-width: 1024px) {
+    .score-div {
         margin: 100px auto 100px;
     }
 }
@@ -313,5 +317,5 @@ footer>a:hover {
 /**********************************************************Congrats page******************************/
 .you-scored {
     margin-bottom: 10%;
-    margin-top: 5%;
+    margin-top: 8%;
 }

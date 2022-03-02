@@ -311,6 +311,7 @@ footer>a:hover {
 }
 
 /**********************************************************Congrats page******************************/
-.play-again {
-    background-color: white;
+.you-scored {
+    margin-bottom: 10%;
+    margin-top: 5%;
 }

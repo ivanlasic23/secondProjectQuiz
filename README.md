@@ -1,5 +1,6 @@
 # Too much 80's music quiz
 
+- ![lighthousereport](assets/images/responsiveness.png)
 
 ## Too much 80's is a fun website which includes a quiz and is aimed at 80's lovers and people who want to learn more about the 80's.
 ### Too much 80's music quiz is a fun for all website that is meant to be over the top and fun. It includes a study page which has images and links to wikipedia pages of some of the most influential musicians of the 80's. It also includes a link to spotify playlist I curated specially for this project.
@@ -118,3 +119,28 @@ In order to clone the project, the following steps are to be followed:
 
 
 ## Credits
+
+### Code
+- Some of the code for the quiz was taken from James Q Quick youtube series about quiz
+- Random color generator is from Jonas Schmedtmann javascript udemy course I have used as a supplement
+
+### Quiz Content
+- Inspiration taken from MTV and VH1 channels that I watch on daily
+- Bands wikipedia sites used for facts
+
+### Images
+- All images used are from bands wikipedia sites
+https://en.wikipedia.org/wiki/Queen_(band)
+https://en.wikipedia.org/wiki/A-ha
+https://en.wikipedia.org/wiki/Prince_(musician)
+https://en.wikipedia.org/wiki/Bon_Jovi
+https://en.wikipedia.org/wiki/Van_Halen
+https://en.wikipedia.org/wiki/U2ß
+
+### Techonologies used
+- GitHub is used for respositories and deployment
+- Google fonts for fonts
+- Font Awesome for only icon used for Spotify playlist
+- Am I Responsive used to for screenshot of responsiveness but mostly used developer tools 
+
+

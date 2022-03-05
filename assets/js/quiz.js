@@ -105,7 +105,7 @@ const quizQuestionsBands = [{
         correct: 1,
     }
 ];
-
+// Parts of code taken from youtube chanel of James Q Quick
 const quiz = document.getElementById("quiz");
 const questions = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("answer-value"));
@@ -124,8 +124,6 @@ currentScore.innerText = 0;
 let score = 0;
 
 //Band quiz start
-
-
 function startBandQuiz() {
     currentQuestion.innerText = 1;
     nextQuestion = quizQuestionsBands;
@@ -180,6 +178,7 @@ choices.forEach(choice => {
             this.innerText = "Incorrect";
         }
         selectedChoice.parentElement.classList.add(classToApply);
+
         //Give it time to show the correct answer and transition
         setTimeout(() => {
             showQuestionBand();
@@ -199,12 +198,12 @@ choices.forEach(choice => {
 function whichMessageToShow() {
     if (score == maxQ) {
         quiz.innerHTML = `<h2 class="you-scored">Great Job! You are a true 80's fan</h2>
-        <a href="index.html" class="btn btn-finish">Play Again</a>`;
+        <a href="questions.html" class="btn btn-finish">Play Again</a>`;
     } else if (score < maxQ) {
         quiz.innerHTML = `<h2 class="you-scored">You have scored ${score} out of ${maxQ}. We think you should study more</h2>
         <a href="study.html" class="btn btn-finish">Study</a>
-        <a href="index.html" class="btn btn-finish">Play Again</a>`;
+        <a href="questions.html" class="btn btn-finish">Play Again</a>`;
     }
 }
-
+// call the function and start the quiz
 startBandQuiz();

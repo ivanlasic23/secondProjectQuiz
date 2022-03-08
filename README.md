@@ -2,7 +2,7 @@
 
 - ![lighthousereport](assets/images/responsiveness.png)
 
-## Too much 80's is a fun website which includes a quiz and is aimed at 80's lovers and people who want to learn more about the 80's.
+### Too much 80's is a fun website which includes a quiz and is aimed at 80's lovers and people who want to learn more about the 80's.
 ### Too much 80's music quiz is a fun for all website that is meant to be over the top and fun. It includes a study page which has images and links to wikipedia pages of some of the most influential musicians of the 80's. It also includes a link to spotify playlist I curated specially for this project.
 
 ## Features
@@ -27,7 +27,6 @@
 
 ### User stories
 - As a user I am looking for easy to navigate and fun quiz 
-- I love 80's music
 - I want to educate myself on 80's music
 
 ### As developer
@@ -57,7 +56,6 @@
 
 ![img](assets/images/cc6.png)
 
-- Also I have used a Jonas Schmedttman code for randon color generator on home page which onmouseover changes color making the home page very over the top which was the goal
 
 ### Fonts
 - I have decided to find the most retro font on google fonts and went with a more pixelated font ORBITRON which I think works well with the site
@@ -73,6 +71,7 @@
 - All HTML files passed throught w3c validator showing no errors
 ### CSS
 - CSS file passed through w3c jigsaw showing no errors
+- https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fivanlasic23.github.io%2FsecondProjectQuiz%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
 
 ### Javascript
 - JS files passed through JS hint showing no errors
@@ -122,7 +121,7 @@ In order to clone the project, the following steps are to be followed:
 
 ### Code
 - Some of the code for the quiz was taken from James Q Quick youtube series about quiz
-- Random color generator is from Jonas Schmedtmann javascript udemy course I have used as a supplement
+
 
 ### Quiz Content
 - Inspiration taken from MTV and VH1 channels that I watch on daily

@@ -166,19 +166,14 @@ choices.forEach(choice => {
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset.number;
 
-        let classToApply;
-
         if (selectedAnswer == currentQuestions.correct) {
-            classToApply = "correct";
             incrementScore();
             this.innerText = "Correct";
 
         } else {
-            classToApply = "incorrect";
             this.innerText = "Incorrect";
         }
-        selectedChoice.parentElement.classList.add(classToApply);
-
+        
         //Give it time to show the correct answer and transition
         setTimeout(() => {
             showQuestionBand();

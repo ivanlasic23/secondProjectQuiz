@@ -246,7 +246,7 @@ footer>a:hover {
 }
 
 .answer-div {
-    background-color: #13e4ef;
+    background-color: white;
     margin: .4rem;
     border-radius: 5px;
     text-align: start;
@@ -255,7 +255,6 @@ footer>a:hover {
 
 .answer-div:hover {
     cursor: pointer;
-    background-color: aquamarine;
 }
 
 .score-score {

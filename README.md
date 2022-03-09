@@ -69,6 +69,7 @@
 ## Testing
 ### HTML
 - All HTML files passed throught w3c validator showing no errors
+- https://validator.w3.org/nu/?doc=https%3A%2F%2Fivanlasic23.github.io%2FsecondProjectQuiz%2Findex.html
 ### CSS
 - CSS file passed through w3c jigsaw showing no errors
 - https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fivanlasic23.github.io%2FsecondProjectQuiz%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en
@@ -81,6 +82,11 @@
 
 ### Responsiveness
 - I have used media queries where needed to achive responsiveness.
+- mobile 
+- ![mobile responsiveness](assets/images/mobile.png)
+- tablet
+- ![tablet responsiveness](assets/images/tablet.png)
+- ![desktop responsiveness](assets/images/desktop.png)
 
 ## Deployment
 

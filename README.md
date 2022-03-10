@@ -2,6 +2,9 @@
 
 - ![lighthousereport](assets/images/responsiveness.png)
 
+### This is the link to live website https://ivanlasic23.github.io/secondProjectQuiz/
+
+
 ### Too much 80's is a fun website which includes a quiz and is aimed at 80's lovers and people who want to learn more about the 80's.
 ### Too much 80's music quiz is a fun for all website that is meant to be over the top and fun. It includes a study page which has images and links to wikipedia pages of some of the most influential musicians of the 80's. It also includes a link to spotify playlist I curated specially for this project.
 
